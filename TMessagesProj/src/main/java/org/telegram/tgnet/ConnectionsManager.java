@@ -182,7 +182,14 @@ public class ConnectionsManager {
         return sendRequest(object, completionBlock, quickAckBlock, null, flags, DEFAULT_DATACENTER_ID, ConnectionTypeGeneric, true);
     }
 
-    public int sendRequest(final TLObject object, final RequestDelegate onComplete, final QuickAckDelegate onQuickAck, final WriteToSocketDelegate onWriteToSocket, final int flags, final int datacenterId, final int connetionType, final boolean immediate) {
+    public int sendRequest( final TLObject object,
+                            final RequestDelegate onComplete,
+                            final QuickAckDelegate onQuickAck,
+                            final WriteToSocketDelegate onWriteToSocket,
+                            final int flags,
+                            final int datacenterId,
+                            final int connetionType,
+                            final boolean immediate) {
         final int requestToken = lastRequestToken.getAndIncrement();
         Utilities.stageQueue.postRunnable(new Runnable() {
             @Override

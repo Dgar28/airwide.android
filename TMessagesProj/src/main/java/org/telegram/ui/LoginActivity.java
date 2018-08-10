@@ -2755,7 +2755,8 @@ public class LoginActivity extends BaseFragment {
         }
     }
 
-    public class LoginActivityRegisterView extends SlideView {
+    public class LoginActivityRegisterView
+            extends SlideView {
 
         private EditTextBoldCursor firstNameField;
         private EditTextBoldCursor lastNameField;
@@ -2777,7 +2778,15 @@ public class LoginActivity extends BaseFragment {
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText6));
             textView.setGravity(LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
-            addView(textView, LayoutHelper.createLinear(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT, 0, 8, 0, 0));
+            addView( textView,
+                    LayoutHelper.createLinear(
+                                    LayoutHelper.WRAP_CONTENT,
+                                    LayoutHelper.WRAP_CONTENT,
+                                    LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT,
+                                    0,
+                                    8,
+                                    0,
+                                    0));
 
             firstNameField = new EditTextBoldCursor(context);
             firstNameField.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
@@ -2791,7 +2800,14 @@ public class LoginActivity extends BaseFragment {
             firstNameField.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
             firstNameField.setMaxLines(1);
             firstNameField.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-            addView(firstNameField, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 36, 0, 26, 0, 0));
+            addView(firstNameField,
+                    LayoutHelper.createLinear(
+                                    LayoutHelper.MATCH_PARENT,
+                                    36,
+                                    0,
+                                    26,
+                                    0,
+                                    0));
             firstNameField.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                 @Override
                 public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
@@ -2815,7 +2831,12 @@ public class LoginActivity extends BaseFragment {
             lastNameField.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
             lastNameField.setMaxLines(1);
             lastNameField.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-            addView(lastNameField, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 36, 0, 10, 0, 0));
+            addView(lastNameField,
+                    LayoutHelper.createLinear(
+                                    LayoutHelper.MATCH_PARENT,
+                                    36,
+                                    0,
+                                    10, 0, 0));
             lastNameField.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                 @Override
                 public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
@@ -2838,7 +2859,16 @@ public class LoginActivity extends BaseFragment {
             wrongNumber.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             wrongNumber.setLineSpacing(AndroidUtilities.dp(2), 1.0f);
             wrongNumber.setPadding(0, AndroidUtilities.dp(24), 0, 0);
-            linearLayout.addView(wrongNumber, LayoutHelper.createLinear(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.BOTTOM | (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT), 0, 0, 0, 10));
+            linearLayout.addView(
+                            wrongNumber,
+                            LayoutHelper.createLinear(
+                                            LayoutHelper.WRAP_CONTENT,
+                                            LayoutHelper.WRAP_CONTENT,
+                                            Gravity.BOTTOM | (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT),
+                                            0,
+                                            0,
+                                            0,
+                                            10));
             wrongNumber.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {

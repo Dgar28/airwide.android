@@ -1383,6 +1383,11 @@ bool ConnectionsManager::isIpv6Enabled() {
 
 void ConnectionsManager::initDatacenters() {
     Datacenter *datacenter;
+
+    datacenter = new Datacenter(1);
+    datacenter->addAddressAndPort("52.207.215.226", 443, 0);
+    datacenters[1] = datacenter;
+    /*
     if (!testBackend) {
         if (datacenters.find(1) == datacenters.end()) {
             datacenter = new Datacenter(1);
@@ -1440,6 +1445,7 @@ void ConnectionsManager::initDatacenters() {
             datacenters[3] = datacenter;
         }
     }
+    */
 }
 
 void ConnectionsManager::attachConnection(ConnectionSocket *connection) {
