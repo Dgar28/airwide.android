@@ -72,11 +72,12 @@ public class FileLog {
             return "";
         }
         try {
-            File sdCard = ApplicationLoader.applicationContext.getExternalFilesDir(null);
-            if (sdCard == null) {
+//            File sdCard = ApplicationLoader.applicationContext.getExternalFilesDir(null);
+            File filesDir = ApplicationLoader.applicationContext.getFilesDir();
+            if (filesDir == null) {
                 return "";
             }
-            File dir = new File(sdCard.getAbsolutePath() + "/logs");
+            File dir = new File(filesDir.getAbsolutePath() + "/logs");
             dir.mkdirs();
             getInstance().networkFile = new File(dir, getInstance().dateFormat.format(System.currentTimeMillis()) + "_net.txt");
             return getInstance().networkFile.getAbsolutePath();
