@@ -44,11 +44,12 @@ public class FileLog {
         }
         dateFormat = FastDateFormat.getInstance("dd_MM_yyyy_HH_mm_ss", Locale.US);
         try {
-            File sdCard = ApplicationLoader.applicationContext.getExternalFilesDir(null);
-            if (sdCard == null) {
+            // File sdCard = ApplicationLoader.applicationContext.getExternalFilesDir(null);
+            File fileDir = ApplicationLoader.applicationContext.getFilesDir();
+            if (fileDir == null) {
                 return;
             }
-            File dir = new File(sdCard.getAbsolutePath() + "/logs");
+            File dir = new File(fileDir.getAbsolutePath() + "/logs");
             dir.mkdirs();
             currentFile = new File(dir, dateFormat.format(System.currentTimeMillis()) + ".txt");
         } catch (Exception e) {
